@@ -1,0 +1,28 @@
+Lets talk about template inherritance in PUG.....
+Normal inherritance ki ami janu xeya hoise je eta base class ba object'r property luwa mane inherrit kora......
+template inherritance jodi normal bhakhat kou then likho kaam karo jyada......time consuming...mane repeated code bur likhi thakibo nalage....
+mani lou ami eta web npage bonalu jot neki navigation bar contact form etc etc kiba kibi dilu xei same bostu amk aru eta web pagot lage etiya ami same xei navbar contact eiburor code nilikhi baa code bur copy nokori ami agor project tur property bur ami eitu projectot inherrit korim 
+Pug supports template inheritance. Template inheritance works via the block and extends keywords.
+
+In a template, a block is simply a “block” of Pug that a child template may replace. This process is recursive.
+
+Pug blocks can provide default content, if appropriate. Providing default content is purely optional, though. The example below defines block scripts, block content, and block foot.
+html
+  head
+    title My Site - #{title}
+    block scripts
+      script(src='/jquery.js')
+  body
+    block content
+    block foot
+      #footer
+        p some footer content
+
+    block scripts mane iyat ami kiba script add koribo paru
+    block content mane iyat ami web pagor content add koribo paru
+ami iyat base.pg file eta bonalu jitu base file hobo
+home.pug file tut ami 1st line tu disu--extends layout.pug iyare mane hoise ami base.pug file tu extend korim baa use korim baa fill korim
+ami base.pug template eta bonai loisu mane practically sabo jau jodi base.pug tu ami ekhn application form'r logot tulona koribo paru....application form ekhn'r base tu sobor karone same sobor form't name age qualification thake just content bur beleg beleg hoi jene mur naam bipul same tenekuwa form't aan ejone naam ABC dibo....
+base eta content beleg beleg......eta e hoise template inherritance
+ami eitu bujibole amar dance website tu sau....
+dance website tut amar home about us contact menu eta etc tab ase  ami jodi bisaru protyek keita tab beleg beleg pagotr khul khaok then protyek tab'r pagor karone eta common kiba thakibo jene navbar footer ami protyek tabor pagot aha ke rakhibo bisaru tetiya ami ki koribo lagibo je protyek tabor pagor karone navbar footer'r karone code likhibo lagibo baa home pagor paa navbar footeror code khini copy kori protyek tabor pagot dibo lagibo ami xeya nokori ami eta base file create kori lom jitu ami dance websitor karone korisu iyat ami eta base template bonai lom aru protyek tab'r pagor karone jikhini dorkar content ami xeya e likhim baki navbar footer baa ji common bostu ami dibo bisaru xeya ami base file tut e bonai lom aru beleg beleg pagot inherrit kori lom.....
